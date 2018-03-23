@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Westriver High School</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+        <link rel="stylesheet" href="http://localhost/loginStyles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <img src="http://localhost/raccoon.svg" alt="Westriver High School Logo" />
+            <h1>WESTRIVER</h1>
+            <h2>HIGH SCHOOL</h2>
+            <div class="login-form">
+                <form method="POST" action="/westriver/verify">
+                    <label class="username" for="username">USERNAME</label>
+                    <br />
+                    <input type="text" class="username" name="username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                    <div class="line"></div>
+                    <label class="password" for="password">PASSWORD</label>
+                    <br />
+                    <input type="password" class="password" name="password">
+                    <div class="line"></div>
+                    {{#if error}}<p class="error">Incorrect username/password</p>{{/if}}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        
+    </body>
+</html>

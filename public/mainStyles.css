@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #dbe2eb;
+}
+
+.sidebar {
+    background-color: #09242e;
+    width: 225px;
+    height: 100vh;
+    float: left;
+    box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar .title {
+    color: white;
+    background-color: #03131b;
+    text-align: center;
+    padding: 3px 0;
+    border-bottom: 2px solid #137faa;
+}
+
+.title h1 {
+    font-weight: 400;
+    font-size: 210%;
+    text-shadow: .5px .5px #F0F0F0;
+}
+
+.sidebar .infoLine {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #153341;
+    padding: 0 7%;
+    box-sizing: border-box;
+    height: 45px;
+    margin-top: 12px;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.sidebar .infoLine:hover {
+    background-color: #1FABE4;
+}
+
+.sidebar .active {
+    border-right: 6px solid #1FABE4;
+}
+
+.infoLine img {
+    width: 25px;
+}
+
+.infoLine p {
+    margin-left: 10px;
+    font-weight: 600;
+    color: white;
+    font-size: 110%;
+}
+
+.sidebar .user {
+    background-color: #09242e;
+    padding-left: 0;
+    justify-content: center;
+    font-size: 105%;
+    flex-direction: column; 
+}
+
+.sidebar .user:hover {
+    background-color: #09242e;
+    cursor: default;
+}
+
+.classList {
+    margin-left: 225px;
+}
+
+.classList .mainHeader footer {
+    width: 89%;
+    max-width: 1100px;
+    padding-top: 15px;
+    border-bottom: 2px solid #1f85e4;
+    padding-bottom: 5px;
+    margin-left: 110px;
+}
+
+.classes {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    flex-wrap: wrap;
+    margin-left: 100px;
+}
+
+.classCard {
+    width: 300px;
+    height: 200px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0px 10px 12px -6px rgba(0, 0, 0, 0.3);
+    transition: all .5s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.classCard:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0px 12px 25px -6px rgba(0, 0, 0, 0.3);
+}
+
+.classCard .className {
+    display: flex;
+    width: 100%;
+    height: 25%;
+    background-color: #1FABE4;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.className h3 {
+    font-weight: 500;
+    font-size: 180%;
+    width: 75%;
+    text-align: center;
+}
+
+.currentGrade {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+    font-weight: 400;
+    border-top-right-radius: 5px;
+    font-family: 'Mukta Malar', sans-serif;
+}
+
+.green {
+    background-color: #26bb26;
+}
+
+.yellow {
+    background-color: #ffff00;
+}
+
+.red {
+    background-color:#e91d1d;
+}
+
+.classContent {
+    height: 75%;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.classContent .underline {
+    text-decoration: underline;
+    font-size: 120%;
+}
+
+.classContent .leftInfo {
+    width: 35%;
+    height: 100%;
+    background-color: aliceblue;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 7px;
+    border-right: 2px solid black;
+    font-weight: 500;
+}
+
+.leftInfo p, .rightDetails p {
+    padding-top: 6px;   
+    font-size: 110%;
+}
+
+.classContent .rightDetails {
+    padding-left: 15px;
+    padding-top: 7px;
+}
+
+.class {
+    border-left: 15px solid #09242e;
+}
+
+.classSidebar {
+    display: none;
+}
+
+.classButton {
+    position: relative;
+}
+
+.classButton .arrow {
+    position: absolute;
+    right: 5%;
+    width: 35px;
+    top: 12%;
+}
