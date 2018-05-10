@@ -3,14 +3,7 @@ var path    = require('path');
 var mysql   = require('mysql');
 var md5     = require('md5');
 var moment  = require('moment');
-// var db      = require('../app/db');
-
-var db = {
-    host: 'tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    user: 'o0wdocclagvg9k7q',
-    password: 'uy07rcnni22z287t',
-    database: 'hsu76hksxijpvpse'
-}
+var db      = require('../app/db');
 
 // MySQL Database
 var connection = mysql.createConnection({
@@ -108,3 +101,8 @@ router.post('/westriver/verify', (req, res) => {
     }
 });
 
+router.get('/westriver/class/:classID', (req, res) => {
+    res.render('class.hbs', {
+
+    });
+});
