@@ -3,7 +3,14 @@ var path    = require('path');
 var mysql   = require('mysql');
 var md5     = require('md5');
 var moment  = require('moment');
-var db      = require('../app/db');
+// var db      = require('../app/db');
+
+var db = {
+    host: 'tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'o0wdocclagvg9k7q',
+    password: 'uy07rcnni22z287t',
+    database: 'hsu76hksxijpvpse'
+}
 
 // MySQL Database
 var connection = mysql.createConnection({
@@ -12,6 +19,8 @@ var connection = mysql.createConnection({
     password: db.password,
     database: db.database
 });
+
+connection.connect();
 
 // Create router object
 var router = express.Router();
