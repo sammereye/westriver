@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" href="http://sammer.xyz/mainStyles.css" />
+    <link rel="stylesheet" href="../css/mainStyles.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mukta+Malar:200,300,regular,500,600,700,800" rel="stylesheet" />
@@ -22,17 +22,17 @@
             <p>{{firstName}} {{lastName}}</p>
         </div>
         <div class="infoLine active">
-            <img src="http://sammer.xyz/home.svg" />
+            <img src="../img/home.svg" />
             <p>Home</p>
         </div>
         <div class="infoLine classButton">
-            <img src="http://sammer.xyz/class.svg" />
+            <img src="../img/class.svg" />
             <p>Courses</p>
-            <img class="arrow" src="http://sammer.xyz/arrow_down.svg" />
+            <img class="arrow" src="../img/arrow_down.svg" />
         </div>
         <div class="classSidebar">
             {{#each courses}}
-            <div class="infoLine class">
+            <div class="infoLine class" style="background-color: {{this.color}}">
                 <p>{{this.courseName}}</p>
             </div>
             {{/each}}
@@ -40,7 +40,7 @@
 
 
         <div class="infoLine">
-            <img src="http://sammer.xyz/account.svg" />
+            <img src="../img/account.svg" />
             <p>Account</p>
         </div>
     </div>
@@ -51,11 +51,8 @@
 
             {{#each courses}}
             <div class="classCard">
-                <div class="className">
+                <div class="className" style="background-color: {{this.color}}">
                     <h3>{{this.courseName}}</h3>
-                    <div class="currentGrade green">
-                        86%
-                    </div>
                 </div>
                 <div class="classContent">
                     <div class="leftInfo">
@@ -64,9 +61,9 @@
                         <p>Teacher</p>
                     </div>
                     <div class="rightDetails">
-                        <p>MAT 210</p>
-                        <p>9:00 AM - 10:15 AM</p>
-                        <p>Abby Barrett</p>
+                        <p>{{this.departmentCode}} {{this.courseID}}</p>
+                        <p>{{this.startTime}} - {{this.endTime}}</p>
+                        <p>{{this.teacher}}</p>
                     </div>
                 </div>
             </div>
@@ -82,8 +79,8 @@
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="http://sammer.xyz/jQueryRotate.js"></script>
-    <script src="http://sammer.xyz/scripts.js"></script>
+    <script src="../js/jQueryRotate.js"></script>
+    <script src="../js/scripts.js"></script>
     
 </body>
 

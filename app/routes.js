@@ -3,7 +3,7 @@ var path    = require('path');
 var mysql   = require('mysql');
 var md5     = require('md5');
 var moment  = require('moment');
-var db      = require('../app/db').dbInfo;
+var db      = require('../app/db');
 
 // MySQL Database
 var connection = mysql.createConnection({
@@ -36,22 +36,29 @@ router.get('/westriver/dashboard', (req, res) => {
     }
 
     var firstName, lastName;
-    connection.query('select s.firstName, s.lastName, c.courseName from student s, sectionEnrollment se, section, course c where s.studentID = se.studentID and se.sectionID = section.sectionID and section.courseID = c.courseID and s.username = "' + req.session.user + '"', (err, rows, fields) => {
+    connection.query('select s.firstName, s.lastName, c.courseName, d.departmentCode, c.courseID, section.startTime, section.endTime,  t.firstName as teacherFirstName, t.lastName as teacherLastName from student s, sectionEnrollment se, section, course c, department d, teacher t, teacherSection ts where s.studentID = se.studentID and se.sectionID = section.sectionID and section.courseID = c.courseID and c.departmentID = d.departmentID and t.teacherID = ts.teacherID and section.sectionID = ts.sectionID and s.username = "' + req.session.user + '"', (err, rows, fields) => {
         if (err) throw err;
         if (rows.length > 0) {
             firstName = rows[0].firstName;
             lastName = rows[0].lastName;
             var courses = [];
+            var colors = ['#A63D40', '#E9B872', '#90A959', '#6494AA'];
             for(var i = 0; i < rows.length; i++) {
                 var classDetails = {
-                    courseName: rows[i].courseName
+                    courseName: rows[i].courseName,
+                    departmentCode: rows[i].departmentCode,
+                    courseID: rows[i].courseID,
+                    startTime: rows[i].startTime,
+                    endTime: rows[i].endTime,
+                    teacher: rows[i].teacherFirstName + ' ' + rows[i].teacherLastName,
+                    color: colors[i]
                 };
                 courses.push(classDetails);
             }
             
 
             var morning;
-            if (moment().format('H') <= 12) {
+            if (moment().format('H') < 12) {
                 morning = true;
             } else {
                 morning = false;

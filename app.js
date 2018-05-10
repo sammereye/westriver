@@ -10,7 +10,7 @@ app.set('view engine', 'hbs');
 
 // Initialize sessions
 app.use(session({
-    secret: 'mr roboto', 
+    secret: '856sess902', 
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }

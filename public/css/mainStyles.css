@@ -21,9 +21,10 @@ body {
     color: white;
     background-color: #03131b;
     text-align: center;
-    padding: 3px 0;
+    padding: 10px 0;
     border-bottom: 2px solid #137faa;
 }
+
 
 .title h1 {
     font-weight: 400;
@@ -132,7 +133,7 @@ body {
 .className h3 {
     font-weight: 500;
     font-size: 180%;
-    width: 75%;
+    width: 100%;
     text-align: center;
 }
 
