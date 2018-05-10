@@ -13,8 +13,6 @@ var connection = mysql.createConnection({
     database: db.database
 });
 
-connection.connect();
-
 // Create router object
 var router = express.Router();
 var status;
