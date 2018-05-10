@@ -27,6 +27,5 @@ app.use('/', router);
 app.use(express.static(__dirname + '/public'));
 
 // Start server
-var port = process.env.PORT || 80;
-app.listen(port);
+app.listen(process.env.PORT || 3000);
 
